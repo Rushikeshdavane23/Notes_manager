@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4 rounded-4" style="width: 420px; background: #ffffff;">
+    <h2 class="text-center mb-3" style="color: #4A90E2; font-weight: bold;">Create an Account</h2>
+    <p class="text-center text-muted mb-4">Join us and get started right away!</p>
+
+    <form method="POST">
+      <div class="form-group mb-3">
+        <label for="email" class="fw-bold">Email Address</label>
+        <input type="email" class="form-control rounded-3 shadow-sm" id="email" name="email" placeholder="Enter email" required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="firstName" class="fw-bold">First Name</label>
+        <input type="text" class="form-control rounded-3 shadow-sm" id="firstName" name="firstName" placeholder="First name" required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="password1" class="fw-bold">Password</label>
+        <input type="password" class="form-control rounded-3 shadow-sm" id="password1" name="password1" placeholder="Enter Password" required>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="password2" class="fw-bold">Confirm Password</label>
+        <input type="password" class="form-control rounded-3 shadow-sm" id="password2" name="password2" placeholder="Confirm Password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 rounded-3 py-2 shadow-sm" style="font-weight: bold; background: linear-gradient(135deg, #4A90E2, #007BFF); border: none;">
+        Sign Up
+      </button>
+
+      <p class="text-center mt-3">
+        Already have an account? 
+        <a href="{{ url_for('auth.login') }}" class="text-decoration-none fw-bold" style="color: #4A90E2;">Login here</a>
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}
